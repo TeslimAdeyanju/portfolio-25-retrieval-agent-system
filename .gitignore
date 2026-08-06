@@ -5,6 +5,10 @@ build/
 dist/
 wheels/
 *.egg-info
+.ipynb_checkpoints/
+.pytest_cache/
+*.db-shm
+*.db-wal
 
 # Virtual environments
 .venv

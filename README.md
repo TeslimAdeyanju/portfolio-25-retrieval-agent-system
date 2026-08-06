@@ -20,6 +20,11 @@ I am using this project as a public portfolio to demonstrate practical skills in
 
 Current focus: **Module 1 - Agentic RAG**
 
+The repository has two working areas:
+
+- `development/` contains the reusable implementation and learning notebooks.
+- `homework/` is an independent environment for assignment work and submissions.
+
 Implemented in this repo:
 
 - FAQ data ingestion from DataTalks.Club endpoints
@@ -39,21 +44,23 @@ Implemented in this repo:
 ├── pyproject.toml
 ├── uv.lock
 ├── README.md
-└── 01-rag-foundations/
-		├── ingestion.py
-		├── rag_pipeline.py
-		├── faq-search.db
-		├── 01-rag-basics-and-keyword-search.ipynb
-		├── 02-reusable-rag-pipeline.ipynb
-		├── 03-sqlite-search-index.ipynb
-		├── 04-agentic-rag-function-calling.ipynb
-		├── 05-agentic-loop-notes.md
-		├── 05-agentic-loop.ipynb
-		├── 06-toyaikit-vs-handwritten-loop-notes.md
-		├── 06-toyaikit-vs-handwritten-loop.ipynb
-		├── 07-pydantic-ai-vs-toyaikit-notes.md
-		├── 07-pydantic-ai-vs-toyaikit.ipynb
-		└── agent_loop.py
+├── 01-rag-foundations/
+		├── development/
+		│		├── 01-rag-basics-and-keyword-search.ipynb
+		│		├── 02-reusable-rag-pipeline.ipynb
+		│		├── 03-sqlite-search-index.ipynb
+		│		├── 04-agentic-rag-function-calling.ipynb
+		│		├── 05-agentic-loop.ipynb
+		│		├── 06-toyaikit-vs-handwritten-loop.ipynb
+		│		├── 07-pydantic-ai-vs-toyaikit.ipynb
+		│		├── ingestion.py
+		│		├── rag_pipeline.py
+		│		├── agent_loop.py
+		│		└── faq-search.db
+		├── homework/
+		│		├── README.md
+		│		└── pyproject.toml
+		└── README.md
 ```
 
 The numbered learning notes follow the progression from RAG foundations to
@@ -103,7 +110,7 @@ def load_module(module_name, file_path):
 	spec.loader.exec_module(module)
 	return module
 
-base = Path("01-rag-foundations")
+base = Path("01-rag-foundations/development")
 ingest = load_module("ingestion", base / "ingestion.py")
 rag_pipeline = load_module("rag_pipeline", base / "rag_pipeline.py")
 
