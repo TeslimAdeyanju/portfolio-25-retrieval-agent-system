@@ -1,8 +1,8 @@
-# Building Agentic RAG
+# Portfolio 25: Retrieval Agent System
 
-This repository documents the development of a production-minded Agentic RAG
-assistant with persistent search, tool calling, iterative retrieval, and typed
-agent frameworks.
+This repository documents the development of a production-minded retrieval
+agent system with persistent search, tool calling, iterative retrieval, and
+typed agent frameworks.
 
 The project began as part of the
 [DataTalks.Club LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp),

@@ -1,7 +1,7 @@
 [project]
-name = "building-agentic-rag"
+name = "portfolio-25-retrieval-agent-system"
 version = "0.1.0"
-description = "A production-minded Agentic RAG assistant with persistent search and tool calling"
+description = "A production-minded retrieval agent system with persistent search and tool calling"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
