@@ -1,7 +1,12 @@
-# LLM Zoomcamp 2026 Portfolio: Agentic RAG Journey
+# Building Agentic RAG
 
-This repository tracks what I am learning and building during the
-[DataTalks.Club LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp).
+This repository documents the development of a production-minded Agentic RAG
+assistant with persistent search, tool calling, iterative retrieval, and typed
+agent frameworks.
+
+The project began as part of the
+[DataTalks.Club LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp),
+but the focus here is what is being built, not the course itself.
 
 I am using this project as a public portfolio to demonstrate practical skills in:
 
