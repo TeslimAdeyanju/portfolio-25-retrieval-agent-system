@@ -31,16 +31,30 @@ Implemented in this repo:
 
 ```text
 .
-├── main.py
 ├── pyproject.toml
 ├── uv.lock
 ├── README.md
-└── 01-agentic-rag/
-		├── ingest.py
-		├── rag_helper.py
-		├── notebook.ipynb
-		└── reusable_rag_pipeline.ipynb
+└── 01-rag-foundations/
+		├── ingestion.py
+		├── rag_pipeline.py
+		├── faq-search.db
+		├── 01-rag-basics-and-keyword-search.ipynb
+		├── 02-reusable-rag-pipeline.ipynb
+		├── 03-sqlite-search-index.ipynb
+		├── 04-agentic-rag-function-calling.ipynb
+		├── 05-agentic-loop-notes.md
+		├── 05-agentic-loop.ipynb
+		├── 06-toyaikit-vs-handwritten-loop-notes.md
+		├── 06-toyaikit-vs-handwritten-loop.ipynb
+		├── 07-pydantic-ai-vs-toyaikit-notes.md
+		├── 07-pydantic-ai-vs-toyaikit.ipynb
+		└── agent_loop.py
 ```
+
+The numbered learning notes follow the progression from RAG foundations to
+agentic systems: understand keyword search, extract the reusable pipeline,
+persist the index with SQLite, add one function-calling round trip, implement
+the repeated agent loop, and compare framework abstractions.
 
 ## Tech Stack
 
@@ -84,20 +98,22 @@ def load_module(module_name, file_path):
 	spec.loader.exec_module(module)
 	return module
 
-base = Path("01-agentic-rag")
-ingest = load_module("ingest", base / "ingest.py")
-rag_helper = load_module("rag_helper", base / "rag_helper.py")
+base = Path("01-rag-foundations")
+ingest = load_module("ingestion", base / "ingestion.py")
+rag_pipeline = load_module("rag_pipeline", base / "rag_pipeline.py")
 
 docs = ingest.load_faq_data()
 index = ingest.build_index(docs)
 client = OpenAI()
 
-rag = rag_helper.RAGBase(index=index, llm_client=client)
+rag = rag_pipeline.RAGBase(index=index, llm_client=client)
 answer = rag.rag("How do I submit homework?")
 print(answer)
 ```
 
-Note: because the folder name starts with a number (`01-agentic-rag`), normal `from ... import ...` syntax will not work directly unless you rename the directory. The notebooks in this repo are the current working interface.
+The numbered folder is intentionally a learning-stage label. The helper
+modules are loaded by file path in this quick-start example so they can remain
+alongside the notebooks without requiring package setup.
 
 ## Learning Outcomes I Am Targeting
 
